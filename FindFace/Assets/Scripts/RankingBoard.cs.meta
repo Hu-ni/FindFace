@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: a5ea2d6042a911b4c9e0db84d58d45e0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - panelPrefab: {fileID: 6057033609466068309, guid: 86a1ab1391afc214b97dc6673a95fcb2, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
