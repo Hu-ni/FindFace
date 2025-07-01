@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -13,9 +15,12 @@ public class GameManager : MonoBehaviour
     public Text timeTxt;
     public GameObject endTxt;
     public GameObject clearTxt;
+    public Text scoreTxt;
 
     public int cardCount = 0;
     float time = 30.0f;
+
+    public static float clearTime;
 
     private void Awake()
     {
@@ -51,9 +56,9 @@ public class GameManager : MonoBehaviour
             cardCount -= 2;
             if(cardCount == 0)
             {
-                clearTxt.SetActive(true);
                 Time.timeScale = 0.0f;
-                
+                clearTime = time;
+                GameClear();
             }
         }
         else
@@ -64,5 +69,9 @@ public class GameManager : MonoBehaviour
 
         firstCard = null;
         secondCard = null;
+    }
+    void GameClear()
+    {
+        SceneManager.LoadScene("ClearScene");
     }
 }
