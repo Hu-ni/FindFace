@@ -26,12 +26,14 @@ public class SceneController : MonoBehaviour
     // 페이드 아웃(검은색)
     public void StartFadeOutB(string sceneName)
     {
+        Debug.Log("AAA");
         StartCoroutine(FadeOutAndLoad(sceneName, true));
     }
 
     // 페이드 아웃(흰색)
     public void StartFadeOutW(string sceneName)
     {
+        Debug.Log("BBB");
         StartCoroutine(FadeOutAndLoad(sceneName, false));
     }
 
