@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public GameObject mosaicImage;
 
     public Card firstCard;
     public Card secondCard;
@@ -18,7 +19,7 @@ public class GameManager : MonoBehaviour
     public Text scoreTxt;
 
     public int cardCount = 0;
-    public static float InitialTime = 30.0f;
+    public static float InitialTime = 90.0f;
     float time = InitialTime;
 
     public static float clearTime;
@@ -34,12 +35,19 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1.0f;
+        if (PlayerPrefs.GetInt("IsClear", 0) == 1)
+        {
+            if (mosaicImage != null)
+                mosaicImage.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        time -= Time.deltaTime;
+        if (SceneManager.GetActiveScene().name != "MainScene")
+            return; //main scene에서만 실행
+            time -= Time.deltaTime;
         timeTxt.text=time.ToString("N2");
         if(time <=  0.01f)
         {
@@ -73,6 +81,8 @@ public class GameManager : MonoBehaviour
     }
     void GameClear()
     {
+        PlayerPrefs.SetInt("IsClear", 1);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("ClearScene");
     }
 }

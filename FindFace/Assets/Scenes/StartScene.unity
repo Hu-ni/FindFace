@@ -374,6 +374,7 @@ GameObject:
   - component: {fileID: 1180857343}
   - component: {fileID: 1180857342}
   - component: {fileID: 1180857344}
+  - component: {fileID: 1180857345}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -460,6 +461,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1180857345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180857340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b6dcf6b5f85aa04297858230f80a043, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mosaicImage: {fileID: 1520609473}
+  firstCard: {fileID: 0}
+  secondCard: {fileID: 0}
+  timeTxt: {fileID: 0}
+  endTxt: {fileID: 0}
+  clearTxt: {fileID: 0}
+  scoreTxt: {fileID: 0}
+  cardCount: 0
 --- !u!1 &1270748433
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,7 +569,7 @@ GameObject:
   - component: {fileID: 1520609476}
   - component: {fileID: 1520609475}
   m_Layer: 5
-  m_Name: Mosaic
+  m_Name: mosaicImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -751,7 +772,7 @@ GameObject:
   - component: {fileID: 1803649932}
   - component: {fileID: 1803649929}
   m_Layer: 5
-  m_Name: RetryBtn
+  m_Name: RankingBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
