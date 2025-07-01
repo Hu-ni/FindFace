@@ -3,6 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+public static class SceneNames
+{
+    public const string ClearScene = "ClearScene";
+    public const string GameOverScene = "GameOverScene";
+    public const string MainScene = "MainScene";
+    public const string RankingScene = "ClearScene";
+    public const string StartScene = "StartScene";
+}
+
 public class SceneController : MonoBehaviour
 {
     public static SceneController Instance { get; private set; }
@@ -26,14 +36,12 @@ public class SceneController : MonoBehaviour
     // 페이드 아웃(검은색)
     public void StartFadeOutB(string sceneName)
     {
-        Debug.Log("AAA");
         StartCoroutine(FadeOutAndLoad(sceneName, true));
     }
 
     // 페이드 아웃(흰색)
     public void StartFadeOutW(string sceneName)
     {
-        Debug.Log("BBB");
         StartCoroutine(FadeOutAndLoad(sceneName, false));
     }
 
@@ -45,22 +53,24 @@ public class SceneController : MonoBehaviour
         else
             transition.SetTrigger("FadeOutW");
         yield return new WaitForSeconds(1.0f); // Fade 애니메이션 길이
-        //SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName);
     }
     #endregion
 
-    #region 슬라이드아웃
-    public void SlideOut(string sceneName)
-    {
-        StartCoroutine(SlideOutAndLoad(sceneName));
-    }
+    // 귀찮으므로 추후 연결해보고 고민해보기로 
+    //#region 슬라이드아웃
+    //public void SlideOut(string sceneName)
+    //{
+    //    StartCoroutine(SlideOutAndLoad(sceneName));
+    //}
 
-    IEnumerator SlideOutAndLoad(string sceneName)
-    {
-        yield return new WaitForSeconds(1.0f);
-    }
+    //IEnumerator SlideOutAndLoad(string sceneName)
+    //{
 
-    #endregion
+    //    yield return new WaitForSeconds(1.0f);
+    //    SceneManager.LoadScene(sceneName);
+    //}
+    //#endregion
     public void OnSceneChanged(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
