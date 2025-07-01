@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public static class SceneNames
-{
-    public const string ClearScene = "ClearScene";
-    public const string GameOverScene = "GameOverScene";
-    public const string MainScene = "MainScene";
-    public const string RankingScene = "ClearScene";
-    public const string StartScene = "StartScene";
-}
+//public static class SceneNames
+//{
+//    public const string ClearScene = "ClearScene";
+//    public const string GameOverScene = "GameOverScene";
+//    public const string MainScene = "MainScene";
+//    public const string RankingScene = "ClearScene";
+//    public const string StartScene = "StartScene";
+//}
 
 public class SceneController : MonoBehaviour
 {
@@ -71,7 +71,7 @@ public class SceneController : MonoBehaviour
     //    SceneManager.LoadScene(sceneName);
     //}
     //#endregion
-    public void OnSceneChanged(string sceneName)
+    public void SceneChange(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
