@@ -65,7 +65,7 @@ public class Card : MonoBehaviour
     }
     public void CloseCard()
     {
-        Invoke("CloseCardInvoke", 1.0f);
+        Invoke("CloseCardInvoke", 0.5f);
     }
 
     void CloseCardInvoke()
