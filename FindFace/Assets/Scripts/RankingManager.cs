@@ -22,45 +22,53 @@ public class RankingManager : MonoBehaviour
 
     //return index where this score locates
     //return -1 when not top 5.
-    public int CheckHigh(float score)
+    public bool CheckHigh(float score)
     {
-        int index = RankingMaxSize - 1;
-        while(index >= 0)
-        {
-            if (PlayerPrefs.HasKey(GenKey(index)))
-            {
-                if (index == RankingMaxSize - 1)
-                    break;
-                else
-                    return index + 1;
-            }
-            index--;
-        }
-        if (index < 0)
-            return 0;
         for (int i = 0; i < RankingMaxSize; i++)
         {
-            if (score < PlayerPrefs.GetFloat(GenKey(i)))
-                return i;
+            if (!PlayerPrefs.HasKey(GenKey(i)) || score < PlayerPrefs.GetFloat(GenKey(i)))
+                return true;
         }
-        return -1;
+        return false;
     }
 
-    public void AddScore(int index, float score)
+    public void AddScore(float score)
     {
-        if (!PlayerPrefs.HasKey(GenKey(index)))
+        int size = 0;
+        while(PlayerPrefs.HasKey(GenKey(size)) && size < RankingMaxSize)
+            size++;
+        int last_index;
+        if (size < RankingMaxSize)
         {
-            PlayerPrefs.SetFloat(GenKey(index), score);
-            return;
+            PlayerPrefs.SetFloat(GenKey(size), score);
+            last_index = size;
         }
-        for (int i = RankingMaxSize-1; i > index; i++)
+        else
         {
-            PlayerPrefs.SetFloat(GenKey(i), PlayerPrefs.GetFloat(GenKey(i - 1)));
+            PlayerPrefs.SetFloat(GenKey(RankingMaxSize - 1), score);
+            last_index = RankingMaxSize - 1;
         }
-        PlayerPrefs.SetFloat(GenKey(index), score);
+        while (last_index > 0)
+        {
+            float f = PlayerPrefs.GetFloat(GenKey(last_index-1));
+            float b = PlayerPrefs.GetFloat(GenKey(last_index));
+            if (b < f)
+            {
+                PlayerPrefs.SetFloat(GenKey(last_index - 1), b);
+                PlayerPrefs.SetFloat(GenKey(last_index), f);
+                last_index--;
+            }
+            else
+                break;
+        }
     }
     public string GenKey(int index)
     {
         return ScoreTemplate + index.ToString();
+    }
+    public void HardReset()
+    {
+        for(int i = 0; i < RankingMaxSize; i++)
+            PlayerPrefs.DeleteKey(GenKey(i));
     }
 }

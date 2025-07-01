@@ -10,9 +10,9 @@ public class ClearScore : MonoBehaviour
     void Start()
     {
         scoreTxt.text = $"Score: {GameManager.instance.timeTxt.text}";
-        int rank = RankingManager.Instance.CheckHigh(GameManager.InitialTime - GameManager.clearTime);
-        if (rank != -1)
-            RankingManager.Instance.AddScore(rank, GameManager.InitialTime - GameManager.clearTime);
+        bool isRank = RankingManager.Instance.CheckHigh(GameManager.InitialTime - GameManager.clearTime);
+        if (isRank)
+            RankingManager.Instance.AddScore(GameManager.InitialTime - GameManager.clearTime);
 
     }
 }
