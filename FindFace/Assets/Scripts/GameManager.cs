@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour
     public Text scoreTxt;
 
     public int cardCount = 0;
-    float time = 30.0f;
+    public static float InitialTime = 30.0f;
+    float time = InitialTime;
 
     public static float clearTime;
 
