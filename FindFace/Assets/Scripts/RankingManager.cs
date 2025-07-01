@@ -70,5 +70,6 @@ public class RankingManager : MonoBehaviour
     {
         for(int i = 0; i < RankingMaxSize; i++)
             PlayerPrefs.DeleteKey(GenKey(i));
+        PlayerPrefs.SetInt("IsClear", 0);
     }
 }
