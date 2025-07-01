@@ -10,6 +10,10 @@ public class ClearScore : MonoBehaviour
     void Start()
     {
         scoreTxt.text = $"Score: {GameManager.instance.timeTxt.text}";
+        int rank = RankingManager.Instance.CheckHigh(GameManager.clearTime);
+        if (rank != -1)
+            RankingManager.Instance.AddScore(rank, GameManager.clearTime);
+
     }
 
     // Update is called once per frame
