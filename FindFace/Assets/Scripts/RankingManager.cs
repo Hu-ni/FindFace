@@ -24,16 +24,20 @@ public class RankingManager : MonoBehaviour
     //return -1 when not top 5.
     public int CheckHigh(float score)
     {
-        for (int i = RankingMaxSize - 1; i >= 0; i--)
+        int index = RankingMaxSize - 1;
+        while(index >= 0)
         {
-            if (PlayerPrefs.HasKey(GenKey(i)))
+            if (PlayerPrefs.HasKey(GenKey(index)))
             {
-                if (i == RankingMaxSize - 1)
+                if (index == RankingMaxSize - 1)
                     break;
                 else
-                    return i + 1;
+                    return index + 1;
             }
+            index--;
         }
+        if (index < 0)
+            return 0;
         for (int i = 0; i < RankingMaxSize; i++)
         {
             if (score < PlayerPrefs.GetFloat(GenKey(i)))

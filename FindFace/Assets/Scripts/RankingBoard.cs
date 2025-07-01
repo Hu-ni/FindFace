@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,16 +7,15 @@ public class RankingBoard : MonoBehaviour
     public GameObject panelPrefab;
 
     private void Start()
-    {
-        //Destroy Already Exisiting Panel
-        while (this.transform.childCount != 0)
-            Destroy(this.transform.GetChild(0));
+    {    
         for (int i = 0; i < RankingManager.RankingMaxSize; i++)
         {
+            Console.WriteLine(RankingManager.Instance.GenKey(i));
             if (PlayerPrefs.HasKey(RankingManager.Instance.GenKey(i)))
             {
-                Transform panel = Instantiate(panelPrefab, this.transform).transform;
-                SetPanel(PlayerPrefs.GetFloat(RankingManager.Instance.GenKey(i)), i + 1, panel);
+                Console.WriteLine(i.ToString());
+                GameObject panel = Instantiate(panelPrefab, this.transform);
+                SetPanel(PlayerPrefs.GetFloat(RankingManager.Instance.GenKey(i)), i + 1, panel.transform);
             }
             else
                 break;
