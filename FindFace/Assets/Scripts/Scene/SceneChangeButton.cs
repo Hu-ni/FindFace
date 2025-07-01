@@ -11,6 +11,7 @@ public enum SceneNames
     GameOverScene,
     RankingScene
 }
+
 // 기존 버튼 대체
 public class SceneChangeButton : MonoBehaviour
 {
