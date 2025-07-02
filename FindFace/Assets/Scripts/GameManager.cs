@@ -14,9 +14,11 @@ public class GameManager : MonoBehaviour
     public Card secondCard;
 
     public Text timeTxt;
-    public GameObject endTxt;
-    public GameObject clearTxt;
     public Text scoreTxt;
+
+    AudioSource audioSource;
+    public AudioClip clip;
+
 
     public int cardCount = 0;
     public static float InitialTime = 90.0f;
@@ -35,6 +37,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
+        audioSource = GetComponent<AudioSource>();
         Time.timeScale = 1.0f;
         if (PlayerPrefs.GetInt("IsClear", 0) == 1)
         {
@@ -60,6 +63,7 @@ public class GameManager : MonoBehaviour
     {
         if(firstCard.idx == secondCard.idx)
         {
+            audioSource.PlayOneShot(clip);
             firstCard.DestoeyCard();
             secondCard.DestoeyCard();
             cardCount -= 2;
