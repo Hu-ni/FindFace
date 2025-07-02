@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 60;
         Time.timeScale = 1.0f;
         if (PlayerPrefs.GetInt("IsClear", 0) == 1)
         {
@@ -49,10 +50,9 @@ public class GameManager : MonoBehaviour
             return; //main scene에서만 실행
             time -= Time.deltaTime;
         timeTxt.text=time.ToString("N2");
-        if(time <=  0.01f)
+        if(time <=  0f)
         {
-            endTxt.SetActive(true);
-            Time.timeScale = 0.0f;
+           SceneManager.LoadScene("GameOverScene");
         }
     }
 
