@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,10 +13,10 @@ public class GameManager : MonoBehaviour
 
     public Card firstCard;
     public Card secondCard;
-
+  
     public Text timeTxt;
     public Text scoreTxt;
-
+  
     AudioSource audioSource;
     public AudioClip clip;
 
@@ -37,6 +38,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
+
+        
         audioSource = GetComponent<AudioSource>();
         Time.timeScale = 1.0f;
         if (PlayerPrefs.GetInt("IsClear", 0) == 1)
@@ -44,7 +47,10 @@ public class GameManager : MonoBehaviour
             if (mosaicImage != null)
                 mosaicImage.SetActive(false);
         }
+
     }
+
+   
 
     // Update is called once per frame
     void Update()
@@ -52,12 +58,13 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "MainScene")
             return; //main scene에서만 실행
             time -= Time.deltaTime;
-        
-        if(time <=  0f)
+                   
+       if (time <= 0f)
         {
-            time = 0f;
-           SceneManager.LoadScene("GameOverScene");
-        }
+                time = 0f;
+                SceneManager.LoadScene("GameOverScene");                       
+        }                    
+
         timeTxt.text = time.ToString("N2");
     }
 
