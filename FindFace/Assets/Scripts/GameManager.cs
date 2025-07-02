@@ -52,11 +52,13 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "MainScene")
             return; //main scene에서만 실행
             time -= Time.deltaTime;
-        timeTxt.text=time.ToString("N2");
+        
         if(time <=  0f)
         {
+            time = 0f;
            SceneManager.LoadScene("GameOverScene");
         }
+        timeTxt.text = time.ToString("N2");
     }
 
     public void Matched()
