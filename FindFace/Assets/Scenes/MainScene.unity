@@ -152,11 +152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6dcf6b5f85aa04297858230f80a043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mosaicImage: {fileID: 0}
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}
   timeTxt: {fileID: 1665134026}
   endTxt: {fileID: 1981782938}
   clearTxt: {fileID: 582606584}
+  scoreTxt: {fileID: 0}
   cardCount: 0
 --- !u!4 &27903970
 Transform:
@@ -572,7 +574,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 30.00
+  m_Text: 00.00
 --- !u!222 &1665134027
 CanvasRenderer:
   m_ObjectHideFlags: 0
