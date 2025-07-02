@@ -1090,7 +1090,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1803649933}
         m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
-        m_MethodName: OnClickFadeOutW
+        m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1150,6 +1150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93c97dc45dbe0164baf4ffb256d348db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rankingBoard: {fileID: 0}
 --- !u!114 &1803649933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1163,6 +1164,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNames: 4
+  isFadeOutBlack: 1
+  isFadeOutWhite: 0
+  BeforeEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2014376693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,6 +1260,7 @@ GameObject:
   - component: {fileID: 2116443544}
   - component: {fileID: 2116443543}
   - component: {fileID: 2116443542}
+  - component: {fileID: 2116443546}
   - component: {fileID: 2116443545}
   m_Layer: 5
   m_Name: StartBtn
@@ -1326,9 +1333,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2116443545}
-        m_TargetAssemblyTypeName: RetryButton, Assembly-CSharp
-        m_MethodName: Retry
+      - m_Target: {fileID: 2116443546}
+        m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1388,6 +1395,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c6521d11cfa3ac4f80b2f1b8489451a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2116443546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116443539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc72447590dc7e14bab02e6c861fe34b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneNames: 1
+  isFadeOutBlack: 0
+  isFadeOutWhite: 0
+  BeforeEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

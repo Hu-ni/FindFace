@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 77564447}
   - component: {fileID: 77564446}
   - component: {fileID: 77564449}
+  - component: {fileID: 77564450}
   - component: {fileID: 77564448}
   m_Layer: 5
   m_Name: Retry
@@ -339,9 +340,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 77564448}
-        m_TargetAssemblyTypeName: RetryButton, Assembly-CSharp
-        m_MethodName: Retry
+      - m_Target: {fileID: 77564450}
+        m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -351,6 +352,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &77564450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77564444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc72447590dc7e14bab02e6c861fe34b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneNames: 1
+  isFadeOutBlack: 1
+  isFadeOutWhite: 0
+  BeforeEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &86903372
 GameObject:
   m_ObjectHideFlags: 0
@@ -4573,6 +4592,7 @@ GameObject:
   - component: {fileID: 2008240341}
   - component: {fileID: 2008240340}
   - component: {fileID: 2008240343}
+  - component: {fileID: 2008240344}
   - component: {fileID: 2008240342}
   m_Layer: 5
   m_Name: Start
@@ -4698,9 +4718,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2008240342}
-        m_TargetAssemblyTypeName: StartButton, Assembly-CSharp
-        m_MethodName: StartScene
+      - m_Target: {fileID: 2008240344}
+        m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
+        m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4710,6 +4730,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2008240344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008240338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc72447590dc7e14bab02e6c861fe34b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneNames: 0
+  isFadeOutBlack: 1
+  isFadeOutWhite: 0
+  BeforeEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2088457994
 GameObject:
   m_ObjectHideFlags: 0

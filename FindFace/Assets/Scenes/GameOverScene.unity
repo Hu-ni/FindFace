@@ -476,7 +476,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 869528602}
         m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
-        m_MethodName: OnClickFadeOutW
+        m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -537,6 +537,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNames: 1
+  isFadeOutBlack: 0
+  isFadeOutWhite: 1
+  BeforeEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &961016880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,7 +1464,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1986862868}
         m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
-        m_MethodName: OnClickFadeOutB
+        m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1520,6 +1525,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneNames: 0
+  isFadeOutBlack: 1
+  isFadeOutWhite: 0
+  BeforeEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2059209211
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 [Serializable]
@@ -15,19 +16,24 @@ public enum SceneNames
 // 기존 버튼 대체
 public class SceneChangeButton : MonoBehaviour
 {
-
     public SceneNames SceneNames;
 
+    [Header("옵션")]
+    public bool isFadeOutBlack;
+    public bool isFadeOutWhite;
 
-    public void OnClickFadeOutB() =>
-        SceneController.Instance?.StartFadeOutB(SceneNames.ToString());
-
-    public void OnClickFadeOutW() =>
-        SceneController.Instance?.StartFadeOutW(SceneNames.ToString());
-
+    [Header("씬 이동 전에 처리할 이벤트")]
+    public UnityEvent BeforeEvents;
 
     public void OnButtonClick()
     {
-        SceneController.Instance?.SceneChange(SceneNames.ToString());
+        BeforeEvents?.Invoke();
+
+        if (isFadeOutBlack)
+            SceneController.Instance.StartFadeOutB(SceneNames.ToString());
+        else if (isFadeOutWhite)
+            SceneController.Instance.StartFadeOutW(SceneNames.ToString());
+        else 
+            SceneController.Instance.SceneChange(SceneNames.ToString());
     }
 }

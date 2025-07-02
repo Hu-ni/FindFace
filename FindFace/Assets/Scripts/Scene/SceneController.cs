@@ -49,6 +49,10 @@ public class SceneController : MonoBehaviour
 
     IEnumerator FadeOutAndLoad(string sceneName, bool isBlack)
     {
+        if (Time.timeScale <= 0f)
+            Time.timeScale = 1f;
+
+
         if (isBlack)
             transition.SetTrigger("FadeOutB");
         else
