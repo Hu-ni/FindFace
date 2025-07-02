@@ -9,7 +9,7 @@ public class ClearScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreTxt.text = $"Score: {GameManager.instance.timeTxt.text}";
+        scoreTxt.text = $"Score: {(GameManager.InitialTime - GameManager.clearTime).ToString("F2")}";
         bool isRank = RankingManager.Instance.CheckHigh(GameManager.InitialTime - GameManager.clearTime);
         if (isRank)
             RankingManager.Instance.AddScore(GameManager.InitialTime - GameManager.clearTime);
