@@ -21,6 +21,7 @@ public class SceneChangeButton : MonoBehaviour
     [Header("옵션")]
     public bool isFadeOutBlack;
     public bool isFadeOutWhite;
+    public bool isFadeOutPicture;
 
     [Header("씬 이동 전에 처리할 이벤트")]
     public UnityEvent BeforeEvents;
@@ -33,6 +34,8 @@ public class SceneChangeButton : MonoBehaviour
             SceneController.Instance.StartFadeOutB(SceneNames.ToString());
         else if (isFadeOutWhite)
             SceneController.Instance.StartFadeOutW(SceneNames.ToString());
+        else if(isFadeOutPicture)
+            SceneController.Instance.StartFadeOutPicture(SceneNames.ToString());
         else 
             SceneController.Instance.SceneChange(SceneNames.ToString());
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 //public static class SceneNames
@@ -18,7 +19,7 @@ public class SceneController : MonoBehaviour
     public static SceneController Instance { get; private set; }
 
     public Animator transition;
-
+    public GameObject maskImage;
 
     private void Awake()
     {
@@ -31,6 +32,11 @@ public class SceneController : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        maskImage.SetActive(false);
     }
 
     #region 페이드 아웃
@@ -57,6 +63,28 @@ public class SceneController : MonoBehaviour
             transition.SetTrigger("FadeOutB");
         else
             transition.SetTrigger("FadeOutW");
+        yield return new WaitForSeconds(1.0f); // Fade 애니메이션 길이
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void StartFadeOutPicture(string sceneName)
+    {
+
+
+        int idx = Random.Range(0, 10);
+        maskImage.SetActive(true);
+        maskImage.GetComponent<Image>().sprite = Resources.Load<Sprite>($"image{idx}");
+
+        StartCoroutine(FadeOutWithPicture(sceneName));
+        maskImage.SetActive(false);
+    }
+
+    IEnumerator FadeOutWithPicture(string sceneName)
+    {
+        if (Time.timeScale <= 0f)
+            Time.timeScale = 1f;
+
+        transition.SetTrigger("FadeOutPicture");
         yield return new WaitForSeconds(1.0f); // Fade 애니메이션 길이
         SceneManager.LoadScene(sceneName);
     }
