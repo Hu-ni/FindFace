@@ -38,6 +38,12 @@ public class SceneController : MonoBehaviour
 
     IEnumerator FadeOutAndLoad(string sceneName, bool isBlack)
     {
+<<<<<<< Updated upstream:FindFace/Assets/Scripts/SceneController.cs
+=======
+        if (Time.timeScale <= 0f)
+            Time.timeScale = 1f;
+
+>>>>>>> Stashed changes:FindFace/Assets/Scripts/Scene/SceneController.cs
         if (isBlack)
             transition.SetTrigger("FadeOutB");
         else
