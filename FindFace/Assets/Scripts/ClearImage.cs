@@ -10,12 +10,35 @@ public class ClearImage : MonoBehaviour
     public SpriteRenderer image1Back;
     public SpriteRenderer image2Back;
 
+    public Animator clearAnim1;
+    public Animator clearAnim2;
+
     public void ChangeImage()
     {
         int order1 = image1.sortingOrder;
         int order2 = image2.sortingOrder;
         int order1Back = image1Back.sortingOrder;
         int order2Back = image2Back.sortingOrder;
+
+        if (order1 > order2)
+        {
+            clearAnim1.SetBool("isClick1", true);
+            clearAnim2.SetBool("isClick2", false);
+        }
+        else
+        {
+            clearAnim2.SetBool("isClick2", true);
+            clearAnim1.SetBool("isClick1", false);
+        }
+        Invoke("ChangeOrderInLayer", 0.2f);
+    }
+    public void ChangeOrderInLayer()
+    {
+        int order1 = image1.sortingOrder;
+        int order2 = image2.sortingOrder;
+        int order1Back = image1Back.sortingOrder;
+        int order2Back = image2Back.sortingOrder;
+
         image1.sortingOrder = order2;
         image2.sortingOrder = order1;
         image1Back.sortingOrder = order2Back;
