@@ -40,9 +40,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
-
-        
-        audioSource = GetComponent<AudioSource>();
+#if UNITY_EDITOR
+        InitialTime = 30.0f;
+#endif
+            audioSource = GetComponent<AudioSource>();
         Time.timeScale = 1.0f;
         if (PlayerPrefs.GetInt("IsClear", 0) == 1)
         {
@@ -68,8 +69,9 @@ public class GameManager : MonoBehaviour
         }
        if (time <= 0f)
         {
-                time = 0f;
-                SceneManager.LoadScene("GameOverScene");                       
+            time = 0f;
+            SceneController.Instance.StartFadeOutB(SceneNames.GameOverScene.ToString());
+                //SceneManager.LoadScene("GameOverScene");                       
         }                    
 
         timeTxt.text = time.ToString("N2");
@@ -103,6 +105,7 @@ public class GameManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("IsClear", 1);
         PlayerPrefs.Save();
-        SceneManager.LoadScene("ClearScene");
+        //SceneManager.LoadScene("ClearScene");
+        SceneController.Instance.StartFadeOutW(SceneNames.ClearScene.ToString());
     }
 }
