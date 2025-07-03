@@ -1406,6 +1406,8 @@ MonoBehaviour:
   image2Back: {fileID: 496379009}
   clearAnim1: {fileID: 899319790}
   clearAnim2: {fileID: 211996801}
+  isPlaying1: 0
+  isPlaying2: 0
 --- !u!114 &485841948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2541,6 +2543,8 @@ MonoBehaviour:
   image2Back: {fileID: 1910982074}
   clearAnim1: {fileID: 112410165}
   clearAnim2: {fileID: 1339033384}
+  isPlaying1: 0
+  isPlaying2: 0
 --- !u!114 &1155424962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2966,6 +2970,8 @@ MonoBehaviour:
   image2Back: {fileID: 1334616554}
   clearAnim1: {fileID: 134732291}
   clearAnim2: {fileID: 560278309}
+  isPlaying1: 0
+  isPlaying2: 0
 --- !u!1 &1203589728
 GameObject:
   m_ObjectHideFlags: 0
@@ -3187,6 +3193,8 @@ MonoBehaviour:
   image2Back: {fileID: 1027686697}
   clearAnim1: {fileID: 1907001838}
   clearAnim2: {fileID: 202216072}
+  isPlaying1: 0
+  isPlaying2: 0
 --- !u!114 &1253480798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4112,8 +4120,8 @@ Camera:
   m_GameObject: {fileID: 1533783899}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.42352942, g: 0.54901963, b: 0.8352941, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -5654,6 +5662,8 @@ MonoBehaviour:
   image2Back: {fileID: 1252396891}
   clearAnim1: {fileID: 86903375}
   clearAnim2: {fileID: 1059658784}
+  isPlaying1: 0
+  isPlaying2: 0
 --- !u!114 &2088457997
 MonoBehaviour:
   m_ObjectHideFlags: 0
