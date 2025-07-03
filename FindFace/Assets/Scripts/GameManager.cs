@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
   
     public Text timeTxt;
     public Text scoreTxt;
+
+    public Color warningColor = new Color(1f, 0.2f, 0.2f, 1f);
   
     AudioSource audioSource;
     public AudioClip clip;
@@ -58,7 +60,12 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "MainScene")
             return; //main scene에서만 실행
             time -= Time.deltaTime;
-                   
+
+
+        if (time < 30.0f)
+        {
+            timeTxt.color = new Color(warningColor.r, warningColor.g - time, warningColor.b - time, timeTxt.color.a);
+        }
        if (time <= 0f)
         {
                 time = 0f;
