@@ -13,12 +13,23 @@ public class ClearImage : MonoBehaviour
     public Animator clearAnim1;
     public Animator clearAnim2;
 
+    public bool isPlaying1 = false;
+    public bool isPlaying2 = false;
+
     public void ChangeImage()
     {
         int order1 = image1.sortingOrder;
         int order2 = image2.sortingOrder;
         int order1Back = image1Back.sortingOrder;
         int order2Back = image2Back.sortingOrder;
+
+        if(isPlaying1 || isPlaying2)
+        {
+            return;
+        }
+
+        isPlaying1 = true;
+        isPlaying2 = true;
 
         if (order1 > order2)
         {
@@ -30,7 +41,10 @@ public class ClearImage : MonoBehaviour
             clearAnim2.SetBool("isClick2", true);
             clearAnim1.SetBool("isClick1", false);
         }
+
         Invoke("ChangeOrderInLayer", 0.2f);
+        Invoke("unlockTrigger", 0.5f);
+
     }
     public void ChangeOrderInLayer()
     {
@@ -43,5 +57,10 @@ public class ClearImage : MonoBehaviour
         image2.sortingOrder = order1;
         image1Back.sortingOrder = order2Back;
         image2Back.sortingOrder = order1Back;
+    }
+    void unlockTrigger()
+    {
+        isPlaying1 = false;
+        isPlaying2 = false;
     }
 }
