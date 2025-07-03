@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [Serializable]
 public enum SceneNames
@@ -28,6 +29,7 @@ public class SceneChangeButton : MonoBehaviour
 
     public void OnButtonClick()
     {
+        gameObject.GetComponent<Button>().interactable = false;
         BeforeEvents?.Invoke();
 
         if (isFadeOutBlack)
@@ -38,5 +40,6 @@ public class SceneChangeButton : MonoBehaviour
             SceneController.Instance.StartFadeOutPicture(SceneNames.ToString());
         else 
             SceneController.Instance.SceneChange(SceneNames.ToString());
+
     }
 }

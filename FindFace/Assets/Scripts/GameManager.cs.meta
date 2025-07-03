@@ -3,14 +3,7 @@ guid: 2b6dcf6b5f85aa04297858230f80a043
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - mosaicImage: {instanceID: 0}
-  - firstCard: {instanceID: 0}
-  - secondCard: {instanceID: 0}
-  - timeTxt: {instanceID: 0}
-  - endTxt: {instanceID: 0}
-  - clearTxt: {instanceID: 0}
-  - scoreTxt: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
