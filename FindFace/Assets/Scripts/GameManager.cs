@@ -40,9 +40,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
-#if UNITY_EDITOR
-        InitialTime = 30.0f;
-#endif
+
             audioSource = GetComponent<AudioSource>();
         Time.timeScale = 1.0f;
         if (PlayerPrefs.GetInt("IsClear", 0) == 1)

@@ -29,7 +29,6 @@ public class SceneChangeButton : MonoBehaviour
 
     public void OnButtonClick()
     {
-        gameObject.GetComponent<Button>().interactable = false;
         BeforeEvents?.Invoke();
 
         if (isFadeOutBlack)
