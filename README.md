@@ -65,20 +65,28 @@ Unity 팀 프로젝트로 제작한 2D 모바일 **카드 뒤집기 게임**입�
 ---
 
 ## 📽️ 시연 영상
-자세한 시연은 [팀 프로젝트 Notion 결과 보고서]([https://www.notion.so/teamsparta/2222dc3ef51480819634d05124d72d4d](https://www.notion.so/teamsparta/2222dc3ef51480819634d05124d72d4d))
+자세한 시연은 [팀 노션 페이지](https://www.notion.so/teamsparta/2222dc3ef51480819634d05124d72d4d)
 
 ---
 
 ## 🗂️ 파일 구조
 
   📂 Assets/
+  
    ├─ 📁 Scripts/
+   
    ├─ 📁 Scenes/
+   
    ├─ 📁 Prefabs/
+   
    ├─ 📁 Image/
+   
    ├─ 📁 Sounds/
+   
    ├─ 📁 Animations/
+   
    ├─ 📁 Resources/Image/
+   
    ├─ 📁 Fonts/
    
 ---
