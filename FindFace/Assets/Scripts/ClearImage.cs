@@ -20,8 +20,6 @@ public class ClearImage : MonoBehaviour
     {
         int order1 = image1.sortingOrder;
         int order2 = image2.sortingOrder;
-        int order1Back = image1Back.sortingOrder;
-        int order2Back = image2Back.sortingOrder;
 
         if(isPlaying1 || isPlaying2)
         {
