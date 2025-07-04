@@ -94,9 +94,6 @@ public class SceneController : MonoBehaviour
 
     IEnumerator FadeOutWithPicture(string sceneName)
     {
-        if (isLoading)
-            yield break;
-
         isLoading = true;
         if (Time.timeScale <= 0f)
             Time.timeScale = 1f;
